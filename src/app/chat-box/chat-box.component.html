@@ -9,8 +9,8 @@
     </div>
     <div *ngIf="isChatOpen" class="chat-popup-container">
         <div class="chat-popup-chatscontainer" #chatsContainer id="chatsContainer">
-            <div *ngFor="let chat of chats" class="chat-item">
-                <app-profile-details [message]="chat"></app-profile-details>
+            <div *ngFor="let chat of chats; let i = index;" class="chat-item">
+                <app-profile-details [side]="i % 2 === 0 ? 'left' : 'right'" [message]="chat"></app-profile-details>
             </div>
         </div>
         <div class="chat-popup-footer-container">

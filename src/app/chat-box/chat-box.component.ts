@@ -24,15 +24,10 @@ export class ChatBoxComponent implements OnInit {
   }
 
   sendMessage(event: any) {
-    if (this.message.trim().length) {
+    if (this.message?.trim()?.length) {
       this.chats.push({message: this.message, type: 'str'});
       this.message = '';
-      try {
-        this.chatsContainer.nativeElement.scrollTop = this.chatsContainer.nativeElement.scrollHeight + 50;
-    } catch(err) { 
-      console.log('err', err);
-    } 
-      // window.scrollTo(0,document.body.scrollHeight);
+      this.scrollToBottom();
     }
     
   }
@@ -44,8 +39,17 @@ export class ChatBoxComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]); // read file as data url
 
       reader.onload = (event) => { // called once readAsDataURL is completed
-        this.chats.push({message: event?.target?.result, type: 'img'})
+        this.chats.push({message: event?.target?.result, type: 'img'});
+        this.scrollToBottom();
       }
     }
+  }
+
+  scrollToBottom() {
+    try {
+      this.chatsContainer.nativeElement.scrollTop = this.chatsContainer.nativeElement.scrollHeight + 50;
+    } catch(err) { 
+      console.log('err', err);
+    } 
   }
 }

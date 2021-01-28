@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProfileDetailsComponent implements OnInit {
 
   @Input() message: any | undefined;
+  @Input() side: string | undefined;
   @Input() lastSeen: string | undefined; 
 
   constructor() { }
