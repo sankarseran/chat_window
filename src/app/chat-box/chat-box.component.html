@@ -4,7 +4,7 @@
         <div class="icon-list">
             <i (click)="actionChatBox()" class="material-icons ">{{isChatOpen ? 'keyboard_arrow_down' :
                 'keyboard_arrow_up'}}</i>
-            <i class="material-icons close">close</i>
+            <i (click)="actionChatBox()" class="material-icons close">close</i>
         </div>
     </div>
     <div *ngIf="isChatOpen" class="chat-popup-container">
