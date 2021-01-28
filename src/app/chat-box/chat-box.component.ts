@@ -24,12 +24,10 @@ export class ChatBoxComponent implements OnInit {
   }
 
   sendMessage(event: any) {
-    console.log('event:', event);
     if (this.message.trim().length) {
       this.chats.push({message: this.message, type: 'str'});
       this.message = '';
       try {
-        console.log(this.chatsContainer.nativeElement.scrollHeight + 50);
         this.chatsContainer.nativeElement.scrollTop = this.chatsContainer.nativeElement.scrollHeight + 50;
     } catch(err) { 
       console.log('err', err);
