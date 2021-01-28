@@ -1,0 +1,5 @@
+<div class="chat-box-footer">
+    <input #selectImg style="display: none;" type='file' accept="image/*" (change)="onSelectFile($event)">
+    <i (click)="selectImg.click()" class="material-icons attachment">attachment</i>
+    <button (click)="sendMsg()">Send</button>
+</div>

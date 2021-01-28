@@ -1,0 +1,12 @@
+div {
+    display: flex;
+    textarea{
+        width: 96%;
+        padding: 5px;
+        // margin: 5px 0 22px 0;
+        resize: none;
+        min-height: 80px;
+        border: 1px solid #d4d4d4;
+        outline: none;
+    }
+}

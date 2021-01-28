@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "chatWindow"
+  "defaultProject": "chatWindow",
+  "cli": {
+    "analytics": "ff0b3144-710b-4f5c-8499-9ba434fcb023"
+  }
 }

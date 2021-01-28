@@ -1,0 +1,21 @@
+.profile_pic_container {
+    display: flex;
+    justify-content: start;
+    align-items: self-start;
+    .profile_pic_img {
+        width: 55px;
+        border-radius: 50%;
+    }
+    .name_other_details {
+        margin-left: 5px;
+        padding-top: 7px;
+        .last-seen {
+            font-size: 14px;
+            color: #8e8e8e;
+        }
+        .message {
+            font-size: 16px;
+            color: #8c8b8b;
+        }
+    }
+}

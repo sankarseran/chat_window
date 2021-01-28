@@ -1,0 +1,21 @@
+<div class="chat-box-container">
+    <div class="chat-open-button">
+        <app-profile-details [lastSeen]="'2min ago'"></app-profile-details>
+        <div class="icon-list">
+            <i (click)="actionChatBox()" class="material-icons ">{{isChatOpen ? 'keyboard_arrow_down' :
+                'keyboard_arrow_up'}}</i>
+            <i class="material-icons close">close</i>
+        </div>
+    </div>
+    <div *ngIf="isChatOpen" class="chat-popup-container">
+        <div class="chat-popup-chatscontainer" #chatsContainer id="chatsContainer">
+            <div *ngFor="let chat of chats" class="chat-item">
+                <app-profile-details [message]="chat"></app-profile-details>
+            </div>
+        </div>
+        <div class="chat-popup-footer-container">
+            <app-text-area [(message)]="message"></app-text-area>
+            <app-chat-box-footer (sendMessage)="sendMessage($event)" (image)="onSelectFile($event)"></app-chat-box-footer>
+        </div>
+    </div>
+</div>

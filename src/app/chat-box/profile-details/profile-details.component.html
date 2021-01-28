@@ -1,0 +1,19 @@
+<div class="profile_pic_container">
+    <img class="profile_pic_img" src="../../../assets/image/profile_pic.png" alt="">
+    <div class="name_other_details">
+        <div class="profile_name">
+             Dhana Inc.
+        </div>
+        <div class="message" *ngIf="message">
+            <div *ngIf="message?.type === 'str'">
+                {{message.message}}
+            </div>
+            <div *ngIf="message?.type === 'img'">
+                <img [src]="message.message" width="200" height="200">
+            </div>
+        </div>
+        <div class="last-seen" *ngIf="lastSeen">
+            {{lastSeen}}
+        </div>
+    </div>
+</div>
